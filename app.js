@@ -1,42 +1,43 @@
-// const $searchForm = $("form");
+const $searchForm = $("form");
+
+let url1 = ''
+
+$searchForm.on("submit", event => {
+    event.preventDefault();
+
+    const formData = new FormData(event. target);
+
+    const champion = formData.get("champion");
+
+    url1 = `https://league-of-legends-champions.p.rapidapi.com/champions/en-us/${champion}`
+
+
+    const settings = {
+        async: true,
+        crossDomain: true,
+        url: url1,
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '75ce2a876fmsha0b9d5ee7862f90p1cb4adjsnf5f897fecf4e',
+            'X-RapidAPI-Host': 'league-of-legends-champions.p.rapidapi.com'
+        }
+    };
+
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+    });
+})
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
 
 // const settings = {
 // 	async: true,
 // 	crossDomain: true,
-// 	url: 'https://league-of-legends-champions.p.rapidapi.com/champions/en-us/bard',
+// 	url: ABC,
 // 	method: 'GET',
 // 	headers: {
-// 		
+// 		'X-RapidAPI-Key': '75ce2a876fmsha0b9d5ee7862f90p1cb4adjsnf5f897fecf4e',
+// 		'X-RapidAPI-Host': 'league-of-legends-champions.p.rapidapi.com'
 // 	}
 // };
-
-// $.ajax(settings).done(function (response) {
-// 	console.log(response);
-// });
-/////////////////////////////////////////////////////////////////////////////////////
-
-// select the input
-const $input = $("input")
-// select the button
-const $button = $("button")
-
-$button.on("click", (event) => {
-    const number = $input.val()
-    $.ajax("https://league-of-legends-champions.p.rapidapi.com/champions/en-us/" + number)
-    .then((data) => {
-        //Select the main tag
-        const $main = $("main")
-        //empty the main tag
-        $main.empty()
-        // create a div
-        const $div = $("<div>")
-        //add the html to the div
-        $div.html(`<h1>${data.title}</h1>`)
-        //append div to main
-        $main.append($div)
-    })
-    .catch((error) => {
-        console.log(error)
-    })
-})
 
