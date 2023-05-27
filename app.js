@@ -26,16 +26,12 @@ $searchForm.on("submit", event => {
     $.ajax(settings).then((response) => {
         console.log(response)
         console.log(response.champion[0].data_dragon_json)
-        const games = response.champion[0].data_dragon_json
-        const div = $("#screen")
-        for (game of games) {
-            const newDiv = $("<div>").addClass("game")
-            newDiv.html(`
-            <img src=${game.full}>
-            `)
-            div.append(newDiv);
-        }
-       
+        // save the json string in a variable
+        const json = response.champion[0].data_dragon_json
+        // convert json string to js object
+        const data = JSON.parse(json)
+        // log to confirm conversion went fine
+        console.log(data)
     })
 })
 
