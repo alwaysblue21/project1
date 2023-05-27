@@ -1,0 +1,39 @@
+/* * {
+    box-sizing: border-box;
+    outline: 2px solid gold;
+} */
+
+body{
+    /* removal of browser defaults and ensure the element is 100% of what i see */
+    margin: 0;
+    height: 100vh;
+    
+    /* background image properties */
+    background-image: url("./img/League-of-Legends-Image-Baron-Nashor-the-oldest-most-powerful-player-Skin-Art-Download-Wallpaper-HD-3840x2400-1920x1440.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    /* i want everything to be centered inside of body element*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.screen{
+    height: 350px;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 0 0 3px gold, 0 0 0 6px yellow;
+}
+
+.result{
+    height: 100px;
+    width: 235px;
+    background-color: black;
+    border-radius: 5px;
+
+    /* need this to distribute the spacing for each div evenly */
+    display: flex;
+    flex-direction: column;
+}
