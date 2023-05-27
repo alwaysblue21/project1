@@ -1,6 +1,6 @@
 const $searchForm = $("form");
 
-let url1 = ''
+let url1 = ""
 
 $searchForm.on("submit", event => {
     event.preventDefault();
@@ -23,17 +23,28 @@ $searchForm.on("submit", event => {
         }
     };
 
-    $.ajax(settings).done(function (response) {
-        console.log(response);
-    });
+    $.ajax(settings).then((response) => {
+        console.log(response)
+        console.log(response.champion[0].data_dragon_json)
+        const games = response.champion[0].data_dragon_json
+        const div = $("#screen")
+        for (game of games) {
+            const newDiv = $("<div>").addClass("game")
+            newDiv.html(`
+            <img src=${game.full}>
+            `)
+            div.append(newDiv);
+        }
+       
+    })
 })
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-
+// code snippets from rapidapi
 // const settings = {
 // 	async: true,
 // 	crossDomain: true,
-// 	url: ABC,
+// 	url: 'https://league-of-legends-champions.p.rapidapi.com/champions/en-us/bard',
 // 	method: 'GET',
 // 	headers: {
 // 		'X-RapidAPI-Key': '75ce2a876fmsha0b9d5ee7862f90p1cb4adjsnf5f897fecf4e',
@@ -41,3 +52,6 @@ $searchForm.on("submit", event => {
 // 	}
 // };
 
+// $.ajax(settings).done(function (response) {
+// 	console.log(response);
+// });
