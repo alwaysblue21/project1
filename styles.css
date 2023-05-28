@@ -20,6 +20,8 @@ body{
     align-items: center;
 }
 
+
+
 .screen{
     height: 350px;
     width: 100%;
@@ -29,12 +31,13 @@ body{
 }
 
 .result{
-    height: 100px;
+    height: 100%;
     width: 100%;
     background-color: black;
-    border-radius: 5px;
+    border-radius: 10px;
     color: white;
     /* need this to distribute the spacing for each div evenly */
     display: flex;
     flex-direction: column;
 }
+

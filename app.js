@@ -16,6 +16,7 @@ $searchForm.on("submit", event => {
     url1 = `https://league-of-legends-champions.p.rapidapi.com/champions/en-us/${champion}`
     
     const $screen = $(".screen");
+    const $result = $(".result");
 
     const settings = {
         async: true,
@@ -56,6 +57,23 @@ $searchForm.on("submit", event => {
         <img src=${image} alt=${data.name}>
         `);
 
+        $result.html(`
+        <div>
+        <b>name:&nbsp;</b> ${data.name}
+        </div>
+
+        <div>
+        <b>title:&nbsp;</b> ${data.title}
+        </div>
+
+        <div>
+        <b>role:&nbsp;</b> ${data.tags}
+        </div>
+
+        <div>
+        <b>Lore:&nbsp;</b> ${data.lore}
+        </div>
+        `)
     })
 })
 
