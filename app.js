@@ -59,15 +59,15 @@ $searchForm.on("submit", event => {
 
         $result.html(`
         <div>
-        <b>name:&nbsp;</b> ${data.name}
+        <b>Name:&nbsp;</b> ${data.name}
         </div>
 
         <div>
-        <b>title:&nbsp;</b> ${data.title}
+        <b>Title:&nbsp;</b> ${data.title}
         </div>
 
         <div>
-        <b>role:&nbsp;</b> ${data.tags}
+        <b>Role:&nbsp;</b> ${data.tags}
         </div>
 
         <div>
