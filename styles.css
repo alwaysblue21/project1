@@ -22,17 +22,18 @@ body{
 
 .screen{
     height: 350px;
-    width: 250px;
+    width: 100%;
     border-radius: 10px;
     box-shadow: 0 0 0 3px gold, 0 0 0 6px yellow;
+    display: flex;
 }
 
 .result{
     height: 100px;
-    width: 235px;
+    width: 100%;
     background-color: black;
     border-radius: 5px;
-
+    color: white;
     /* need this to distribute the spacing for each div evenly */
     display: flex;
     flex-direction: column;

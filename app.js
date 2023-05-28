@@ -9,8 +9,13 @@ $searchForm.on("submit", event => {
 
     const champion = formData.get("champion");
 
-    url1 = `https://league-of-legends-champions.p.rapidapi.com/champions/en-us/${champion}`
+    // const caps = (champion) => {
+    //     return `${champion}`.charAt(0).toUpperCase() + `${champion}`.slice(1).toLowerCase();
+    // }
 
+    url1 = `https://league-of-legends-champions.p.rapidapi.com/champions/en-us/${champion}`
+    
+    const $screen = $(".screen");
 
     const settings = {
         async: true,
@@ -24,14 +29,33 @@ $searchForm.on("submit", event => {
     };
 
     $.ajax(settings).then((response) => {
-        console.log(response)
-        console.log(response.champion[0].data_dragon_json)
+        console.log(response);
+        console.log(response.champion[0].data_dragon_json);
         // save the json string in a variable
-        const json = response.champion[0].data_dragon_json
+        const jsons = response.champion[0].data_dragon_json;
         // convert json string to js object
-        const data = JSON.parse(json)
+        const data = JSON.parse(jsons);
         // log to confirm conversion went fine
-        console.log(data)
+        console.log(data);
+
+        const image = response.champion[0].champion_splash;
+
+
+
+        console.log(image)
+        // const div = $("#screen");
+        // for (json of jsons) {
+        //     const newDiv = $("<div>").addClass("json");
+        //     newDiv.html(`
+        //     <img src = ${json.image.full} alt = ${data.name}>
+        //     `)
+        //     div.append(newDiv); 
+        // }
+
+        $screen.html(`
+        <img src=${image} alt=${data.name}>
+        `);
+
     })
 })
 
@@ -51,3 +75,19 @@ $searchForm.on("submit", event => {
 // $.ajax(settings).done(function (response) {
 // 	console.log(response);
 // });
+//////////////////////////////////////////////////////////////////////////
+// let capitalize = 'sPiKe';
+
+// We need a function that takes in a string. 
+// This function needs to RETURN that string with the first letter is in caps.
+// The function must also ensures everything else is in lowercase.
+// This string will never hold an empty space
+
+// const caps = str => {
+//     return `${str}`.charAt(0).toUpperCase() + `${str}`.slice(1).toLowerCase();
+// }
+
+
+// console.log(
+//     caps(capitalize)
+// )
