@@ -20,7 +20,15 @@ body{
     align-items: center;
 }
 
+/* .box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+} */
 
+/* .box-middle {
+    justify-content: space-evenly;
+} */
 
 .screen{
     height: 350px;
@@ -31,7 +39,7 @@ body{
 }
 
 .result{
-    height: 185px;
+    height: 210px;
     width: 593px;
     background-color: black;
     border-radius: 10px;
