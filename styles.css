@@ -5,7 +5,7 @@
 
 body{
     /* removal of browser defaults and ensure the element is 100% of what i see */
-    margin: 0;
+    margin: 0 150px;
     height: 100vh;
     
     /* background image properties */
@@ -16,15 +16,9 @@ body{
 
     /* i want everything to be centered inside of body element*/
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
-
-/* .box {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-} */
 
 .box-middle {
     display: flex;
@@ -34,20 +28,20 @@ body{
 }
 
 .screen{
-    height: 250px;
-    width: 350px;
+    height: 400px;
+    width: 600px;
     border-radius: 10px;
     box-shadow: 0 0 0 3px gold, 0 0 0 6px yellow;
     display: flex;
     background-color: white;
 }
 
-.result{
-    height: 250px;
-    width: 350px;
-    background-color: black;
+.result {
+    height: 400px;
+    width: 600px;
+    background-color: white;
     border-radius: 10px;
-    color: white;
+    color: black;
     /* need this to distribute the spacing for each div evenly */
     display: flex;
     flex-direction: column;
@@ -57,10 +51,11 @@ body{
 img {
     height: 100%;
     width: 100%;
+    border-radius: 10px;
 }
 
 .result > div {
-    color: white;
+    color:  black;
     text-transform: capitalize;
     padding-left: 5px;
 
