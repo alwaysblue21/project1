@@ -26,21 +26,25 @@ body{
     justify-content: space-between;
 } */
 
-/* .box-middle {
-    justify-content: space-evenly;
-} */
+.box-middle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
 
 .screen{
-    height: 350px;
-    width: 593px;
+    height: 250px;
+    width: 350px;
     border-radius: 10px;
     box-shadow: 0 0 0 3px gold, 0 0 0 6px yellow;
     display: flex;
+    background-color: white;
 }
 
 .result{
-    height: 210px;
-    width: 593px;
+    height: 250px;
+    width: 350px;
     background-color: black;
     border-radius: 10px;
     color: white;
@@ -48,6 +52,11 @@ body{
     display: flex;
     flex-direction: column;
     box-shadow: 0 0 0 3px gold, 0 0 0 6px yellow;
+}
+
+img {
+    height: 100%;
+    width: 100%;
 }
 
 .result > div {
