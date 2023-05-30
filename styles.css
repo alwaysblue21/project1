@@ -14,10 +14,24 @@ body{
     background-size: cover;
     background-position: center;
 
-    /* i want everything to be centered inside of body element*/
+    /* i want everything to be centered inside of body element */
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+.logo {
+    height: 240px;
+    width: 680px;
+    display: flex;
+    margin: 0 auto;
+}
+
+.box {
     display: flex;
     justify-content: space-between;
     align-items: center;
+   
 }
 
 .box-middle {
