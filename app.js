@@ -17,6 +17,12 @@ $searchForm.on("submit", event => {
     
     const $screen = $(".screen");
     const $result = $(".result");
+    const $button = $(".button");
+
+//     $button.onClick("q", event => {
+//     event.preventDefault();
+//     $screen.skillQVid;
+// })
 
     const settings = {
         async: true,
@@ -51,6 +57,11 @@ $searchForm.on("submit", event => {
         const skillEInfo = response.champion[0].champion_e.champion_e_description;
         const skillRInfo = response.champion[0].champion_r.champion_r_description;
 
+        const skillQVid = response.champion[0].champion_q.champion_q_video_webm;
+        const skillWVid = response.champion[0].champion_w.champion_w_video_webm;
+        const skillEVid = response.champion[0].champion_e.champion_e_video_webm;
+        const skillRVid = response.champion[0].champion_r.champion_r_video_webm;
+
         console.log(image)
         console.log(skillQIcon)
 
@@ -76,22 +87,30 @@ $searchForm.on("submit", event => {
         </div>
 
         <div>
+        <button class="q">
         <img class="img1" src=${skillQIcon} alt=${data.name}>
+        </button>
         <b>Skill Q:&nbsp;</b> ${skillQInfo}
         </div>
 
         <div>
+        <button class="w">
         <img class="img1" src=${skillWIcon} alt=${data.name}>
+        </button>
         <b>Skill W:&nbsp;</b> ${skillWInfo}
         </div>
 
         <div>
+        <button class="e">
         <img class="img1" src=${skillEIcon} alt=${data.name}>
+        </button>
         <b>Skill E:&nbsp;</b> ${skillEInfo}
         </div>
 
         <div>
+        <button class="r">
         <img class="img1" src=${skillRIcon} alt=${data.name}>
+        </button>
         <b>Skill R:&nbsp;</b> ${skillRInfo}
         </div>
         `)
@@ -130,3 +149,8 @@ $searchForm.on("submit", event => {
 // console.log(
 //     caps(capitalize)
 // )
+
+// $button.onClick("q", event => {
+//     event.preventDefault();
+//     $screen.skillQVid;
+// })
