@@ -41,17 +41,18 @@ $searchForm.on("submit", event => {
 
         const image = response.champion[0].champion_splash;
 
+        const skillQIcon = response.champion[0].champion_q.champion_q_icon;
+        const skillWIcon = response.champion[0].champion_w.champion_w_icon;
+        const skillEIcon = response.champion[0].champion_e.champion_e_icon;
+        const skillRIcon = response.champion[0].champion_r.champion_r_icon;
 
+        const skillQInfo = response.champion[0].champion_q.champion_q_description;
+        const skillWInfo = response.champion[0].champion_w.champion_w_description;
+        const skillEInfo = response.champion[0].champion_e.champion_e_description;
+        const skillRInfo = response.champion[0].champion_r.champion_r_description;
 
         console.log(image)
-        // const div = $("#screen");
-        // for (json of jsons) {
-        //     const newDiv = $("<div>").addClass("json");
-        //     newDiv.html(`
-        //     <img src = ${json.image.full} alt = ${data.name}>
-        //     `)
-        //     div.append(newDiv); 
-        // }
+        console.log(skillQIcon)
 
         $screen.html(`
         <img src=${image} alt=${data.name}>
@@ -72,6 +73,26 @@ $searchForm.on("submit", event => {
 
         <div>
         <b>Lore:&nbsp;</b> ${data.lore}
+        </div>
+
+        <div>
+        <img class="img1" src=${skillQIcon} alt=${data.name}>
+        <b>Skill Q:&nbsp;</b> ${skillQInfo}
+        </div>
+
+        <div>
+        <img class="img1" src=${skillWIcon} alt=${data.name}>
+        <b>Skill W:&nbsp;</b> ${skillWInfo}
+        </div>
+
+        <div>
+        <img class="img1" src=${skillEIcon} alt=${data.name}>
+        <b>Skill E:&nbsp;</b> ${skillEInfo}
+        </div>
+
+        <div>
+        <img class="img1" src=${skillRIcon} alt=${data.name}>
+        <b>Skill R:&nbsp;</b> ${skillRInfo}
         </div>
         `)
     })

@@ -5,7 +5,7 @@
 
 body{
     /* removal of browser defaults and ensure the element is 100% of what i see */
-    margin: 0 150px;
+    margin: 0 100px;
     height: 100vh;
     
     /* background image properties */
@@ -22,7 +22,7 @@ body{
 
 .logo {
     height: 200px;
-    width: 660px;
+    width: 600px;
     display: flex;
     margin: 0 auto;
 }
@@ -42,8 +42,8 @@ body{
 }
 
 .screen{
-    height: 400px;
-    width: 600px;
+    height: 600px;
+    width: 900px;
     border-radius: 10px;
     box-shadow: 0 0 0 3px gold, 0 0 0 6px yellow;
     display: flex;
@@ -57,8 +57,8 @@ input {
 }
 
 .result {
-    height: 440px;
-    width: 600px;
+    height: 750px;
+    width: 700px;
     background-color: white;
     border-radius: 10px;
     color: black;
@@ -74,11 +74,16 @@ img {
     border-radius: 10px;
 }
 
+.img1 {
+    height: 45px;
+    width: 45px;
+}
+
 .result > div {
     color:  black;
     text-transform: capitalize;
     padding-left: 5px;
-    font-size: 20px;
+    font-size: 15px;
     font-family: monospace;
 
     /* distribute the spacing for each div evenly */
@@ -88,6 +93,15 @@ img {
     display: flex;
     align-items: center;
 }
+
+/* .skillSets {
+    width: 1615px;
+    height: 100px;
+    background-color: white;
+    display: flex;
+    margin: 0 auto;
+    
+} */
 
 @media (max-height: 650px) {
     body{
