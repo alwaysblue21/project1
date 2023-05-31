@@ -19,11 +19,6 @@ $searchForm.on("submit", event => {
     const $result = $(".result");
     const $button = $(".button");
 
-//     $button.onClick("q", event => {
-//     event.preventDefault();
-//     $screen.skillQVid;
-// })
-
     const settings = {
         async: true,
         crossDomain: true,
@@ -68,7 +63,15 @@ $searchForm.on("submit", event => {
         $screen.html(`
         <img src=${image} alt=${data.name}>
         `);
-
+        ///////////////////////////////////
+        // $screen.html(`
+        // <video controls>
+        // button.onclick(".q"){
+        //     ${skillQVid}
+        // }
+        // </video>
+        // `)
+        //////////////////////////////////
         $result.html(`
         <div>
         <b>Name:&nbsp;</b> ${data.name}
