@@ -99,7 +99,51 @@ img {
     
 } */
 
-@media (max-width: 400px) {
+@media (max-width: 375px) {
+    body{
+        background-repeat: repeat;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
+    .logo {
+        width: 100%;
+        height: 100%;
+        
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        margin: 0 auto;
+    }
+    .screen {
+        height: 120%;
+        width: 120%;
+        margin-top: 5%;
+    }
+
+    .input {
+        font-size: 100%;
+        padding: 100%;
+    }
+
+    .box2 {
+        margin-right: 60%;
+    }
+
+    .result {
+        height: 100%;
+        width: 170%;
+        margin-top: 10%;
+        
+    }
+}
+
+@media (max-width: 390px) {
     body{
         background-repeat: repeat;
         width: 80%;
