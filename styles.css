@@ -199,7 +199,7 @@ img {
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 435px) {
     body{
         background-repeat: repeat;
         width: 100%;
