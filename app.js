@@ -17,10 +17,10 @@ $searchForm.on("submit", event => {
     
     const $screen = $(".screen");
     const $result = $(".result");
-    const $buttonQ = $(".buttonQ");
-    const $buttonW = $(".buttonW");
-    const $buttonE = $(".buttonE");
-    const $buttonR = $(".buttonR");
+    const $buttonQ = $(".q");
+    const $buttonW = $(".w");
+    const $buttonE = $(".e");
+    const $buttonR = $(".r");
 
     const settings = {
         async: true,
@@ -92,8 +92,12 @@ $searchForm.on("submit", event => {
 
         </div>
 
+        <div class+"story">
+
         <div>
         <b>Lore:&nbsp;</b> ${data.lore}
+        </div>
+
         </div>
 
         <div class="skillBox">
@@ -128,6 +132,9 @@ $searchForm.on("submit", event => {
 
         </div>
         `)
+
+        //////////////////////////////////
+        // $buttonQ.onClick($screen.html(`skillQIcon`));
     })
 })
 

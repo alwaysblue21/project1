@@ -99,7 +99,7 @@ img {
 }
 
 .q,.w,.e,.r {
-    box-shadow: 0 0 0 3px yellow;
+    box-shadow: 0 0 0 1px gold, 0 0 0 2px yellow;
 }
 
 /* .skillSets {
