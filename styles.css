@@ -32,7 +32,6 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around
 }
 
 .screen{
@@ -40,7 +39,7 @@ body{
     width: 800px;
     border-radius: 10px;
     box-shadow: 0 0 0 3px gold, 0 0 0 6px yellow;
-    display: flex;
+    /* display: flex; */
     background-color: white;
     margin-bottom: 25px;
 }
@@ -52,7 +51,7 @@ input {
 }
 
 .result {
-    height: 770px;
+    height: 730px;
     width: 700px;
     background-color: white;
     border-radius: 10px;
@@ -61,6 +60,16 @@ input {
     display: flex;
     flex-direction: column;
     box-shadow: 0 0 0 3px gold, 0 0 0 6px yellow;
+    padding-bottom: 30px;
+}
+
+.skillBox {
+    flex-direction: column;
+    display: flex;
+}
+
+.infos {
+    justify-content: space-evenly;
 }
 
 img {
@@ -89,6 +98,10 @@ img {
     align-items: center;
 }
 
+.q,.w,.e,.r {
+    box-shadow: 0 0 0 3px yellow;
+}
+
 /* .skillSets {
     width: 1615px;
     height: 100px;
@@ -97,39 +110,7 @@ img {
     margin: 0 auto;
     
 } */
-@media (max-width: 1750px) {
-    body{
-        background-repeat: repeat;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        margin: 0 auto;
-    }
 
-    .logo {
-        width: 320px;
-        height: 120px;
-    }
-
-    .box {
-        display: flex;
-        
-        width: 100%;
-        margin: 0 auto;
-    }
-    .screen {
-        height: 300px;
-        width: 600px;
-        margin-top: 5%;
-    }
-
-    .result {
-        height: 100%;
-        width: 900px;
-        margin-top: 5%;
-        
-    }
-}
 
 @media (max-width: 1025px) {
     body{

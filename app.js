@@ -17,7 +17,10 @@ $searchForm.on("submit", event => {
     
     const $screen = $(".screen");
     const $result = $(".result");
-    const $button = $(".button");
+    const $buttonQ = $(".buttonQ");
+    const $buttonW = $(".buttonW");
+    const $buttonE = $(".buttonE");
+    const $buttonR = $(".buttonR");
 
     const settings = {
         async: true,
@@ -52,10 +55,10 @@ $searchForm.on("submit", event => {
         const skillEInfo = response.champion[0].champion_e.champion_e_description;
         const skillRInfo = response.champion[0].champion_r.champion_r_description;
 
-        const skillQVid = response.champion[0].champion_q.champion_q_video_webm;
-        const skillWVid = response.champion[0].champion_w.champion_w_video_webm;
-        const skillEVid = response.champion[0].champion_e.champion_e_video_webm;
-        const skillRVid = response.champion[0].champion_r.champion_r_video_webm;
+        const skillQName = response.champion[0].champion_q.champion_q_name;
+        const skillWName = response.champion[0].champion_w.champion_w_name;
+        const skillEName = response.champion[0].champion_e.champion_e_name;
+        const skillRName = response.champion[0].champion_r.champion_r_name;
 
         console.log(image)
         console.log(skillQIcon)
@@ -73,6 +76,8 @@ $searchForm.on("submit", event => {
         // `)
         //////////////////////////////////
         $result.html(`
+        <div class="infos">
+
         <div>
         <b>Name:&nbsp;</b> ${data.name}
         </div>
@@ -85,36 +90,42 @@ $searchForm.on("submit", event => {
         <b>Role:&nbsp;</b> ${data.tags}
         </div>
 
+        </div>
+
         <div>
         <b>Lore:&nbsp;</b> ${data.lore}
         </div>
+
+        <div class="skillBox">
 
         <div>
         <button class="q">
         <img class="img1" src=${skillQIcon} alt=${data.name}>
         </button>
-        <b>Skill Q:&nbsp;</b> ${skillQInfo}
+        <b>Skill Q:&nbsp"${skillQName}":&nbsp;</b> ${skillQInfo}
         </div>
 
         <div>
         <button class="w">
         <img class="img1" src=${skillWIcon} alt=${data.name}>
         </button>
-        <b>Skill W:&nbsp;</b> ${skillWInfo}
+        <b>Skill W:&nbsp"${skillWName}":&nbsp;</b> ${skillWInfo}
         </div>
 
         <div>
         <button class="e">
         <img class="img1" src=${skillEIcon} alt=${data.name}>
         </button>
-        <b>Skill E:&nbsp;</b> ${skillEInfo}
+        <b>Skill E:&nbsp"${skillEName}":&nbsp;</b> ${skillEInfo}
         </div>
 
         <div>
         <button class="r">
         <img class="img1" src=${skillRIcon} alt=${data.name}>
         </button>
-        <b>Skill R:&nbsp;</b> ${skillRInfo}
+        <b>Skill R:&nbsp"${skillRName}":&nbsp;</b> ${skillRInfo}
+        </div>
+
         </div>
         `)
     })
