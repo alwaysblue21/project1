@@ -33,6 +33,9 @@ $searchForm.on("submit", event => {
         }
     };
 
+    $screen.empty();
+    $result.html(`<div>Loading...</div>`)
+
     $.ajax(settings).then((response) => {
         console.log(response);
         console.log(response.champion[0].data_dragon_json);
@@ -59,6 +62,12 @@ $searchForm.on("submit", event => {
         const skillWName = response.champion[0].champion_w.champion_w_name;
         const skillEName = response.champion[0].champion_e.champion_e_name;
         const skillRName = response.champion[0].champion_r.champion_r_name;
+
+        const skillQImg = response.champion[0].champion_q.champion_q_video_poster;
+        const skillWImg = response.champion[0].champion_q.champion_w_video_poster;
+        const skillEImg = response.champion[0].champion_q.champion_e_video_poster;
+        const skillRImg = response.champion[0].champion_q.champion_r_video_poster;
+
 
         console.log(image)
         console.log(skillQIcon)
@@ -133,9 +142,16 @@ $searchForm.on("submit", event => {
         </div>
         `)
 
-        //////////////////////////////////
-        // $buttonQ.onClick($screen.html(`skillQIcon`));
+        // onClick(() => {
+        //     $screen.html(`${skillQImg}`)
+        // })
+    
+
     })
+
+    .catch(() => {
+        $result.html(`<div> there was an error...</div>`)
+    });
 })
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
