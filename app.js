@@ -64,26 +64,23 @@ $searchForm.on("submit", event => {
         const skillRName = response.champion[0].champion_r.champion_r_name;
 
         const skillQImg = response.champion[0].champion_q.champion_q_video_poster;
-        const skillWImg = response.champion[0].champion_q.champion_w_video_poster;
-        const skillEImg = response.champion[0].champion_q.champion_e_video_poster;
-        const skillRImg = response.champion[0].champion_q.champion_r_video_poster;
+        const skillWImg = response.champion[0].champion_w.champion_w_video_poster;
+        const skillEImg = response.champion[0].champion_e.champion_e_video_poster;
+        const skillRImg = response.champion[0].champion_r.champion_r_video_poster;
+
+        // const skillQVid = response.champion[0].champion_q.champion_q_video_poster;
+        // const skillWVid = response.champion[0].champion_w.champion_w_video_poster;
+        // const skillEVid = response.champion[0].champion_e.champion_e_video_poster;
+        // const skillRVid = response.champion[0].champion_r.champion_r_video_poster;
 
 
         console.log(image)
         console.log(skillQIcon)
 
         $screen.html(`
-        <img src=${image} alt=${data.name}>
+        <img src=${image} alt="picture of a champion">
         `);
-        ///////////////////////////////////
-        // $screen.html(`
-        // <video controls>
-        // button.onclick(".q"){
-        //     ${skillQVid}
-        // }
-        // </video>
-        // `)
-        //////////////////////////////////
+      
         $result.html(`
         <div class="infos">
 
@@ -113,28 +110,28 @@ $searchForm.on("submit", event => {
 
         <div>
         <button class="q">
-        <img class="img1" src=${skillQIcon} alt=${data.name}>
+        <img class="img1" src=${skillQIcon} alt="skill q icon img">
         </button>
         <b>Skill Q:&nbsp"${skillQName}":&nbsp;</b> ${skillQInfo}
         </div>
 
         <div>
         <button class="w">
-        <img class="img1" src=${skillWIcon} alt=${data.name}>
+        <img class="img1" src=${skillWIcon} alt="skill w icon img">
         </button>
         <b>Skill W:&nbsp"${skillWName}":&nbsp;</b> ${skillWInfo}
         </div>
 
         <div>
         <button class="e">
-        <img class="img1" src=${skillEIcon} alt=${data.name}>
+        <img class="img1" src=${skillEIcon} alt="skill e icon img">
         </button>
         <b>Skill E:&nbsp"${skillEName}":&nbsp;</b> ${skillEInfo}
         </div>
 
         <div>
         <button class="r">
-        <img class="img1" src=${skillRIcon} alt=${data.name}>
+        <img class="img1" src=${skillRIcon} "skill r icon img">
         </button>
         <b>Skill R:&nbsp"${skillRName}":&nbsp;</b> ${skillRInfo}
         </div>
@@ -142,10 +139,23 @@ $searchForm.on("submit", event => {
         </div>
         `)
 
-        // onClick(() => {
-        //     $screen.html(`${skillQImg}`)
-        // })
-    
+        ////on click listner////
+        ////////////////////////
+       $(".q").on("click", function() {
+        $screen.html(`<img src=${skillQImg} alt="picture of a champion using skill">`)
+       })
+
+       $(".w").on("click", function() {
+        $screen.html(`<img src=${skillWImg} alt="picture of a champion using skill">`)
+       })
+
+       $(".e").on("click", function() {
+        $screen.html(`<img src=${skillEImg} alt="picture of a champion using skill">`)
+       })
+
+       $(".r").on("click", function() {
+        $screen.html(`<img src=${skillRImg} alt="picture of a champion using skill">`)
+       })
 
     })
 
